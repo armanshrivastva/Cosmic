@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NASA Pixel Explorer — Zoom & Discover the Universe</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="universe" id="universe" aria-hidden="true">
+    <div class="nebula"></div>
+    <div class="stars"></div>
+    <div class="twinkle"></div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+      
+        <span class="brand-text">NASA Pixel Explorer</span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <ul>
+          <li><a href="#discover">Discover</a></li>
+          <li><a href="#mission">Labels</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero container" id="discover">
+      <div class="hero-left">
+        <h1>“See Beyond. <br> Learn Beyond.”</h1>
+        <p class="lead">
+          While your phone can display about 3 million pixels and your eyes can see over 10 million, 
+          NASA’s space images are even larger — billions and even trillions of pixels. 
+          This platform lets you zoom in and out of these massive datasets, label known features, 
+          and discover new patterns hidden in the cosmos.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#gallery">Explore Gallery</a>
+          <button class="btn ghost" id="tourBtn">Start a Quick Tour</button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="card highlight">
+          <h3>Today's Highlight</h3>
+          <p id="highlightText">A breathtaking view from deep space — click "Start a Quick Tour" to see details.</p>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <h4>Billions+</h4>
+            <p>Pixels per image</p>
+          </div>
+          <div class="stat">
+            <h4>90K</h4>
+            <p>Images</p>
+          </div>
+          <div class="stat">
+            <h4>∞</h4>
+            <p>Discoveries</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="grid container" id="gallery" aria-label="Gallery">
+      <article class="tile">
+        <img src="file:///C:/Users/asus/Desktop/project%20NASA/Media/PIA21073~orig.jpg" alt="Deep space nebula">
+        <div class="tile-content">
+          <h3>Orion Nebula</h3>
+          <p>Zoom into the star-forming regions.</p>
+        </div>
+      </article>
+
+      <article class="tile">
+        <img src="file:///C:/Users/asus/Desktop/project%20NASA/Media/GSFC_20171208_Archive_e000018~orig.jpg" alt="Planet surface">
+        
+        <div class="tile-content">
+          <h3>Red Planet</h3>
+          <p>Surface views and rover tracks.</p>
+        </div>
+      </article>
+
+      <article class="tile">
+        <img src="file:///C:/Users/asus/Desktop/project%20NASA/Media/GSFC_20171208_Archive_e000749~orig.jpg" alt="Milky Way">
+        <div class="tile-content">
+          <h3>Milky Way</h3>
+          <p>A slice of our galaxy in incredible detail.</p>
+        </div>
+      </article>
+       <article class="tile">
+        <img src="file:///C:/Users/asus/Desktop/project%20NASA/Media/behemoth-black-hole-found-in-an-unlikely-place_26209716511_o~orig.jpg" alt="Deep space nebula">
+        <div class="tile-content">
+          <h3>Behemoth Black Hole</h3>
+          <p>Behemoth Black Hole Found in an Unlikely Place</p>
+        </div>
+      </article>
+
+      <article class="tile">
+        <img src="file:///C:/Users/asus/Desktop/project%20NASA/Media/carina_nebula~orig.png" alt="Planet surface">
+        
+        <div class="tile-content">
+          <h3>Cosmic Cliffs</h3>
+          <p>James Webb Space Telescope NIRCam Image in Carina Nebula</p>
+        </div>
+      </article>
+
+      <article class="tile">
+        <img src="file:///C:/Users/asus/Desktop/project%20NASA/Media/as11-40-5903~orig.jpg" alt="Milky Way">
+        <div class="tile-content">
+          <h3>Lunar Module</h3>
+          <p>Astronaut Edwin Aldrin walks on lunar surface near leg of Lunar Module.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="mission container" id="mission">
+      <div class="mission-card">
+        <h2>Our mission</h2>
+        <p>
+          To push the frontier of space exploration: science, exploration, and inspiring the next generation. 
+          NASA Pixel Explorer is built to handle massive datasets, enabling zooming, labeling, and pattern discovery 
+          in images far larger than anything a phone or eye could process at once.
+        </p>
+        <ul>
+          <li>Zoom into trillions of pixels</li>
+          <li>Label celestial features</li>
+          <li>Discover hidden patterns</li>
+        </ul>
+      </div>
+
+      <aside class="mission-cta">
+        <h3>Join the mission</h3>
+        <p>Subscribe for updates, mission briefings, and exclusive high-resolution imagery.</p>
+        <form id="subscribeForm" class="subscribe-form" aria-label="Subscribe">
+          <input type="email" id="email" placeholder="you@space.org" required>
+          <button class="btn primary" type="submit">Subscribe</button>
+        </form>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> NASA Pixel Explorer • Discover the universe beyond imagination</p>
+      <div class="socials">
+        <a href="#" aria-label="Twitter">Twitter</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
