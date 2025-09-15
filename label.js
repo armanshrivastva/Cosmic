@@ -8,7 +8,7 @@ const viewer = OpenSeadragon({
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: {
         type: 'image',
-        url: 'file:///C:/Users/asus/Desktop/project%20NASA/Media/carina_nebula~orig.png', // Replace with your image path
+        url: 'carina_nebula~orig.png', // Replace with your image path
         buildPyramid: false
     },
     showNavigator: false,         // Hide navigator
@@ -98,3 +98,4 @@ viewer.addHandler('canvas-click', function(event) {
     // Add to left-side list
     addLabelToList(label, text);
 });
+
