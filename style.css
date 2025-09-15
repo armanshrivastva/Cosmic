@@ -14,14 +14,14 @@
 }
 html,body { height:100%; background:var(--bg); color: #e9eef8; }
 
-/* Universe background composition (separate element) */
+/* Universe background composition */
 .universe{
   position: fixed; inset: 0; z-index: -2; overflow: hidden;
   transform: translateZ(0);
   pointer-events: none;
 }
 
-/* nebula - large blurred color blobs */
+/* nebula */
 .nebula{
   position:absolute; inset:-20% -10% auto auto; width:150%; height:120%;
   background: radial-gradient(30% 30% at 10% 20%, rgba(124,58,237,0.18), transparent 15%),
@@ -32,7 +32,7 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
   z-index: -2;
 }
 
-/* Many tiny stars using background gradient & repeating radial */
+/* tiny stars */
 .stars{
   position:absolute; inset:0;
   background-image:
@@ -48,7 +48,7 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
   animation: drift 60s linear infinite;
 }
 
-/* subtle twinkling layer */
+/* twinkle */
 .twinkle{
   position:absolute; inset:0;
   background-image:
@@ -61,7 +61,7 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
   z-index:-1;
 }
 
-/* small keyframes */
+/* keyframes */
 @keyframes twinkle{
   0%,100%{ opacity:.25; transform: translateY(0) scale(1); }
   50%{ opacity:.05; transform: translateY(-3px) scale(.98); }
@@ -95,9 +95,32 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
 .menu-btn span{ display:block; width:22px; height:2px; background: #e6eefc; margin:4px 0; border-radius:2px; }
 
 /* Hero */
-.hero{ display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:start; padding:56px 0; min-height:62vh; }
-.hero-left h1{ font-size:clamp(2rem, 4vw, 3.25rem); line-height:1.02; margin-bottom:12px; font-weight:900; letter-spacing:-1px; }
-.lead{ color:var(--muted); margin-bottom:20px; max-width:46ch; font-weight:400;  font-size: 1.25rem; }
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: start;
+  padding: 56px 0;
+  min-height: 62vh;
+}
+
+.hero-left h1 {
+  font-size: clamp(1.5rem, 6vw, 3.25rem);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.lead {
+  color: var(--muted);
+  margin-bottom: 20px;
+  max-width: 100%;
+  font-weight: 400;
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  line-height: 1.5;
+  word-wrap: break-word;
+}
 
 /* Buttons */
 .btn{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:10px 14px; border-radius:12px; font-weight:700; cursor:pointer; border:1px solid rgba(255,255,255,0.06); background:var(--glass-strong); color:inherit; }
@@ -128,7 +151,7 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
 .site-footer{ border-top:1px solid rgba(255,255,255,0.03); padding:20px 0; margin-top:40px; color:var(--muted); }
 .footer-inner{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
 
-/* responsive */
+/* responsive adjustments */
 @media (max-width:980px){
   .hero{ grid-template-columns: 1fr; }
   .grid{ grid-template-columns: repeat(2, 1fr); }
@@ -137,6 +160,17 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
 }
 
 @media (max-width:620px){
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 28px 16px; /* reduce horizontal padding */
+  }
+  .hero-left h1 {
+    font-size: clamp(1.25rem, 7vw, 2rem);
+    text-align: left;
+  }
+  .lead {
+    font-size: clamp(0.95rem, 4vw, 1.1rem);
+  }
   .grid{ grid-template-columns: 1fr; }
   .mission{ flex-direction:column; }
   .hero-right{ order:2; }
