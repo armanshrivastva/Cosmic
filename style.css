@@ -157,3 +157,13 @@ input[type="email"]{ padding:10px 12px; border-radius:10px; border:1px solid rgb
   .grid { grid-template-columns: 1fr; }
   .hero-right { order:2; }
 }
+
+.tile-link {
+    text-decoration: none; /* remove underline */
+    color: inherit;        /* keep text color */
+    display: block;        /* allow full-tile click */
+}
+.tile-link:hover .tile {
+    transform: scale(1.03);
+    transition: transform 0.3s;
+}
