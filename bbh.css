@@ -1,0 +1,129 @@
+
+
+/* Reset & base */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg:#030417;
+  --glass: rgba(255,255,255,0.06);
+  --muted: rgba(255,255,255,0.7);
+  --accent: #7c3aed;
+  --accent-2: #06b6d4;
+  --glass-strong: rgba(255,255,255,0.08);
+  --radius: 14px;
+  --container: 1100px;
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: dark;
+}
+html,body { height:100%; background:var(--bg); color: #e9eef8; }
+
+/* Two-column layout */
+.app-container {
+    display: flex;
+    height: 100%;
+    
+}
+
+/* Left Controls Panel */
+.controls-panel {
+    width: 200px;
+    padding: 20px;
+    background: #030417;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.controls-panel button {
+    padding: 10px 14px;
+    border-radius: 6px;
+    border: none;
+    background: #7c3aed;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.controls-panel button:hover {
+    background: #f0f0f0;
+}
+
+.controls-panel button.active {
+    background: yellow;
+}
+
+/* Right Viewer Panel */
+.viewer-panel {
+    flex: 1;
+    position: relative;
+}
+
+#viewer {
+    width: 100%;
+    height: 100%;
+}
+
+#labels-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Label styles */
+.label {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.label-icon {
+    width: 24px;
+    height: 24px;
+    background: url('location-icon.png') no-repeat center/contain;
+}
+
+.label-text {
+    margin-top: 2px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+.label-list-container {
+  margin-top: 20px;
+  background: rgba(255,255,255,0.02);
+  border-radius: var(--radius);
+  padding: 12px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.label-list-container h4 {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+  color: var(--accent);
+}
+#label-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 8px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.05);
+  font-size: 0.85rem;
+}
+#label-list li button {
+  background: var(--accent);
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  padding: 2px 6px;
+  font-size: 0.75rem;
+}
