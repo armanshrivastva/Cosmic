@@ -14,14 +14,14 @@
 }
 html,body { height:100%; background:var(--bg); color: #e9eef8; }
 
-/* Universe background composition */
+/* Universe background composition (separate element) */
 .universe{
   position: fixed; inset: 0; z-index: -2; overflow: hidden;
   transform: translateZ(0);
   pointer-events: none;
 }
 
-/* nebula */
+/* nebula - large blurred color blobs */
 .nebula{
   position:absolute; inset:-20% -10% auto auto; width:150%; height:120%;
   background: radial-gradient(30% 30% at 10% 20%, rgba(124,58,237,0.18), transparent 15%),
@@ -32,7 +32,7 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
   z-index: -2;
 }
 
-/* tiny stars */
+/* Many tiny stars using background gradient & repeating radial */
 .stars{
   position:absolute; inset:0;
   background-image:
@@ -48,7 +48,7 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
   animation: drift 60s linear infinite;
 }
 
-/* twinkle */
+/* subtle twinkling layer */
 .twinkle{
   position:absolute; inset:0;
   background-image:
@@ -61,7 +61,7 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
   z-index:-1;
 }
 
-/* keyframes */
+/* small keyframes */
 @keyframes twinkle{
   0%,100%{ opacity:.25; transform: translateY(0) scale(1); }
   50%{ opacity:.05; transform: translateY(-3px) scale(.98); }
@@ -95,32 +95,9 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
 .menu-btn span{ display:block; width:22px; height:2px; background: #e6eefc; margin:4px 0; border-radius:2px; }
 
 /* Hero */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 420px;
-  gap: 28px;
-  align-items: start;
-  padding: 56px 0;
-  min-height: 62vh;
-}
-
-.hero-left h1 {
-  font-size: clamp(1.5rem, 6vw, 3.25rem);
-  line-height: 1.1;
-  margin-bottom: 12px;
-  font-weight: 900;
-  letter-spacing: -1px;
-}
-
-.lead {
-  color: var(--muted);
-  margin-bottom: 20px;
-  max-width: 100%;
-  font-weight: 400;
-  font-size: clamp(1rem, 4vw, 1.25rem);
-  line-height: 1.5;
-  word-wrap: break-word;
-}
+.hero{ display:grid; grid-template-columns: 1fr 420px; gap:28px; align-items:start; padding:56px 0; min-height:62vh; }
+.hero-left h1{ font-size:clamp(2rem, 4vw, 3.25rem); line-height:1.02; margin-bottom:12px; font-weight:900; letter-spacing:-1px; }
+.lead{ color:var(--muted); margin-bottom:20px; max-width:46ch; font-weight:400; font-size:1.25rem; }
 
 /* Buttons */
 .btn{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; padding:10px 14px; border-radius:12px; font-weight:700; cursor:pointer; border:1px solid rgba(255,255,255,0.06); background:var(--glass-strong); color:inherit; }
@@ -142,40 +119,41 @@ html,body { height:100%; background:var(--bg); color: #e9eef8; }
 .tile:hover img{ transform:scale(1.08); }
 .tile-content{ position:absolute; left:12px; bottom:12px; color:white; text-shadow: 0 6px 30px rgba(2,6,23,0.8); }
 
-/* mission */
+/* Mission */
 .mission{ display:flex; gap:22px; align-items:flex-start; padding:40px 0 80px; }
 .mission-card{ flex:1; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:20px; border-radius:14px; }
 .mission-cta{ width:320px; padding:20px; border-radius:14px; background: rgba(255,255,255,0.02); }
 
-/* footer */
+/* Footer */
 .site-footer{ border-top:1px solid rgba(255,255,255,0.03); padding:20px 0; margin-top:40px; color:var(--muted); }
 .footer-inner{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
-
-/* responsive adjustments */
-@media (max-width:980px){
-  .hero{ grid-template-columns: 1fr; }
-  .grid{ grid-template-columns: repeat(2, 1fr); }
-  .nav{ display:none; }
-  .menu-btn{ display:block; }
-}
-
-@media (max-width:620px){
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 28px 16px; /* reduce horizontal padding */
-  }
-  .hero-left h1 {
-    font-size: clamp(1.25rem, 7vw, 2rem);
-    text-align: left;
-  }
-  .lead {
-    font-size: clamp(0.95rem, 4vw, 1.1rem);
-  }
-  .grid{ grid-template-columns: 1fr; }
-  .mission{ flex-direction:column; }
-  .hero-right{ order:2; }
-}
 
 /* small accessibility & focus styles */
 a:focus, button:focus, input:focus { outline: 3px solid rgba(124,58,237,0.18); outline-offset:3px; border-radius:10px; }
 input[type="email"]{ padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:inherit; width:100%; margin-bottom:8px; }
+
+/* Responsive adjustments */
+
+/* Tablet / medium screens */
+@media (max-width:980px){
+  .hero { grid-template-columns: 1fr; padding:48px 16px; }
+  .lead { font-size:1.15rem; }
+  .mission { gap:16px; padding:32px 16px 60px; flex-wrap: wrap; }
+  .mission-cta { width: 100%; padding:16px; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .nav { display: none; }
+  .menu-btn { display: block; }
+}
+
+/* Mobile / small screens */
+@media (max-width:620px){
+  .hero { grid-template-columns: 1fr; padding:32px 12px; }
+  .hero-left h1 { font-size: clamp(1.5rem, 6vw, 2.5rem); }
+  .lead { font-size: clamp(1rem, 4vw, 1.15rem); }
+  .mission { flex-direction: column; gap:16px; padding:24px 12px 40px; }
+  .mission-card, .mission-cta { width: 100%; padding:16px; }
+  .mission-card h3 { font-size: clamp(1rem, 4vw, 1.25rem); }
+  .mission-card p { font-size: clamp(0.9rem, 3.5vw, 1.05rem); }
+  .grid { grid-template-columns: 1fr; }
+  .hero-right { order:2; }
+}
