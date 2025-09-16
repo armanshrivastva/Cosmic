@@ -8,7 +8,7 @@ const viewer = OpenSeadragon({
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: {
         type: 'image',
-        url: 'PIA21073~orig.jpg', // Replace with your image path
+        url: '36994_PIA16918wb.jpg', // Replace with your image path
         buildPyramid: false
     },
     showNavigator: false,         // Hide navigator
@@ -98,4 +98,5 @@ viewer.addHandler('canvas-click', function(event) {
     // Add to left-side list
     addLabelToList(label, text);
 });
+
 
