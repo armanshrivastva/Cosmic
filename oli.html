@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cosmic Vision - NASA Image Viewer</title>
+<link rel="stylesheet" href="oli.css">
+<script src="https://openseadragon.github.io/openseadragon/openseadragon.min.js"></script>
+</head>
+<body>
+
+<div class="app-container">
+    <!-- Left Controls Panel -->
+    <div class="controls-panel">
+        <button id="zoom-in">Zoom In +</button>
+        <button id="zoom-out">Zoom Out -</button>
+        <button id="add-label">Add Label</button>
+
+
+          <div class="label-list-container">
+    <h4>Labels</h4>
+    <ul id="label-list"></ul>
+  </div>
+</div>
+
+
+    <!-- Right Viewer -->
+    <div class="viewer-panel">
+        <div id="viewer"></div>
+        <div id="labels-container"></div>
+    </div>
+</div>
+
+<script src="oli.js"></script>
+</body>
+</html>
 
