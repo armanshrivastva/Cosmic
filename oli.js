@@ -8,7 +8,7 @@ const viewer = OpenSeadragon({
     prefixUrl: "https://openseadragon.github.io/openseadragon/images/",
     tileSources: {
         type: 'image',
-        url: '36994_PIA16918wb.jpg', // Replace with your image path
+        url: 'auskingsound-oli2-20250611-lrg.jpg', // Replace with your image path
         buildPyramid: false
     },
     showNavigator: false,         // Hide navigator
